@@ -11,9 +11,9 @@ Does exactly what the name says: a quick script to stream large files to Amazon 
 
 ## "It Cannot Be Done" (Challenge Accepted!)
 
-According to this
-http://stackoverflow.com/questions/17309559/stream-uploading-file-to-s3-on-node-js-using-formidable-and-knox-or-aws-sdk
-StackOverflow question/answer stream-uploading large files to S3
+According to
+[this StackOverflow Q/A](http://stackoverflow.com/a/17326079/1148249)
+stream-uploading large files to S3
 is "not possible" because S3 requires the file-size up-front.
 (i.e. before you can upload the file you need to tell S3 its size
   and since we are streaming the file in chunks we don't know
@@ -36,8 +36,8 @@ transform the data in the stream how ever you need to and pipe the output to S3 
 ## Useful Links
 
 Best place to learn Node.js Streams:
-- [**github.com/substack/stream-handbook**](http://github.com/substack/stream-handbook)
-- http://maxogden.com/node-streams.html +
+- SubStack's Streams Intro: [**github.com/substack/stream-handbook**](http://github.com/substack/stream-handbook)
+- Max's stream intro: http://maxogden.com/node-streams.html
 - http://ejohn.org/blog/node-js-stream-playground
 - http://codewinds.com/blog/2013-08-04-nodejs-readable-streams.html
 
