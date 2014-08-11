@@ -23,11 +23,6 @@ S.streamFileToS3(file, function(){
 
 var request = require('request');
 var url = S.S3FileUrl(file);
-// request(url, function (error, response, body) {
-//   if (!error && response.statusCode == 200) {
-//     console.log(body.length);
-//   }
-// });
 
 var file2 = 'example/kitten2.jpg';
 request(url)

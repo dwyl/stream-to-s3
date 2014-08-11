@@ -10,23 +10,36 @@ A quick script to **stream large files to Amazon S3 using node.js**
 [![devDependency Status](https://david-dm.org/nelsonic/stream-to-s3/dev-status.svg)](https://david-dm.org/nelsonic/stream-to-s3#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/stream-to-s3.png)](https://npmjs.org/package/stream-to-s3)
 
-Node.js is the *perfect* tool for streaming large files
+Node.js is the *perfect* tool for streaming large files to Amazon Web Services S3.
+
 
 ![Node.js and Amazon S3](http://i.imgur.com/w1S84gJ.png)
 
 ## Usage
 
-require the module:
+Install:
+```sh
+npm install stream-to-s3
+```
 
-this...
+```
+var S = require('stream-to-s3');
+var file = __dirname+'/your-large-file.jpg';
 
+S.streamFileToS3(file, function(){
+  console.log('Awesomeness', file, 'was uploaded!');
+  console.log('Visit:',S.S3FileUrl(file));
+});
+
+```
+
+**Note**: I've deliberately kept the stream-uploader simple,
+if you need to transform the data in the read-stream before
+uploading it, fork this repo, add a new test/method and submit a PR.
 
 ## The Solution (Warning: Contains Detail!)
 
-You do not need async to solve this problem.
-
-Simply stream the (large) file, do what ever transformation you need and pipe the result directly to amazon S3 using [**Knox**](https://github.com/LearnBoost/knox)
-
+See: **index.js** for the implementation details.
 
 ## Tests! :open_mouth:
 
@@ -56,10 +69,6 @@ But don't fear, there are tests and they are easy to run. <br/>
 (and I don't encourage others to do the **exit 0** "hack" unless <br />
 there's some sensitive config you don't want to open-source...)
 
-
-. . .
-transform the data in the stream how ever you need to and pipe the output to S3 using Knox putStream(). This is the true power of node.js
-
 ## Useful Links
 
 Node.js Docs for Readable Streams:
@@ -88,3 +97,4 @@ is "not possible" because S3 requires the file-size up-front.
 # To update
 - [ ] http://stackoverflow.com/questions/25156716/how-to-apply-async-on-for-loop-of-range
 - [ ] http://stackoverflow.com/questions/17309559/stream-uploading-file-to-s3-on-node-js-using-formidable-and-knox-or-aws-sdk
+(requires using the HTML5 File API to get the File Size/Mime client-side...)
