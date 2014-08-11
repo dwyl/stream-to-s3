@@ -35,3 +35,10 @@ request(url)
     });
   })
 );
+
+
+
+var file = __dirname+'/world_map.jpg'; // any file format!
+S.streamFileToS3(file, function(err) { // standard callback function:
+  console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
+});

@@ -24,13 +24,10 @@ npm install stream-to-s3
 
 ```
 var S = require('stream-to-s3');
-var file = __dirname+'/your-large-file.jpg';
-
-S.streamFileToS3(file, function(){
-  console.log('Awesomeness', file, 'was uploaded!');
-  console.log('Visit:',S.S3FileUrl(file));
+var file = '/your-file-name.jpg';      // any file format!
+S.streamFileToS3(file, function(err) { // standard callback function:
+  console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
 });
-
 ```
 
 **Note**: I've deliberately kept the stream-uploader simple,
