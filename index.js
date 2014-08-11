@@ -18,7 +18,6 @@ var S = {};
 
 S.streamFile = function(file, callback) {
 
-
   // Amazon S3 needs to know the file-size before you can upload it
   fs.stat(file, function(err, stat){
     // Be sure to handle `err`.

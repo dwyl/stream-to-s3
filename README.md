@@ -1,9 +1,6 @@
-Stream Siles Amason S3
+Stream Siles Amason S3 [![Build Status](https://travis-ci.org/nelsonic/stream-to-s3.png?branch=master)](https://travis-ci.org/nelsonic/stream-to-s3) [![Code Climate](https://codeclimate.com/github/nelsonic/stream-to-s3.png)](https://codeclimate.com/github/nelsonic/stream-to-s3) [![Dependencies](https://david-dm.org/nelsonic/stream-to-s3.png?theme=shields.io)](https://david-dm.org/nelsonic/stream-to-s3)
 ========================
 
-- [ ] update links before submit <br />
-
-[![Build Status](https://travis-ci.org/nelsonic/time.png?branch=master)](https://travis-ci.org/nelsonic/time) [![Code Climate](https://codeclimate.com/github/nelsonic/time.png)](https://codeclimate.com/github/nelsonic/time) [![Dependencies](https://david-dm.org/nelsonic/time.png?theme=shields.io)](https://david-dm.org/nelsonic/time)
 
 
 Does exactly what the name says: a quick script to stream large files to Amazon S3 using node.js
