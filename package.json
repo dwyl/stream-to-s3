@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo 'Please see README.md Tests! >> npm run realtest' && exit 0",
-    "realtest": "istanbul cover _mocha -- -R spec",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "realtest": "istanbul cover _mocha -- -R spec --timeout 15000 ",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --timeout 15000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "request": "^2.40.0"
   },
   "dependencies": {
-    "knox": "^0.9.0"
+    "knox": "^0.9.0",
+    "mime": "^1.2.11"
   }
 }

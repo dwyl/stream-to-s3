@@ -2,42 +2,52 @@ var file = 'your_file.txt'; // change this part
 
 var fs = require('fs');     // node core filesystem module (KISS!)
 var knox = require('knox'); // https://github.com/LearnBoost/knox
+var mime = require('mime'); // https://github.com/broofa/node-mime
 
 var CONFIG = require("./config.json");
-var s3baseurl  = 'https://'+CONFIG.S3_BUCKET+'.s3.amazonaws.com/';
+
+var S = {};
 
 // initialise knox S3 client
-var client = knox.createClient({
+S.client = knox.createClient({
   key:    CONFIG.AWS_ACCESS_KEY_ID,
   secret: CONFIG.AWS_SECRET_ACCESS_KEY,
   bucket: CONFIG.S3_BUCKET,
   region: CONFIG.AWS_REGION
 });
 
-var S = {};
+S.S3FileUrl = function(file) {
+  var filename = file.split('/')[file.split('/').length-1];
+  return 'https://'+CONFIG.S3_BUCKET+'.s3.amazonaws.com/'+filename;
+};
 
-S.streamFile = function(file, callback) {
+S.streamFileToS3 = function(file, callback) {
 
   // Amazon S3 needs to know the file-size before you can upload it
   fs.stat(file, function(err, stat){
-    // Be sure to handle `err`.
+    /* istanbul ignore if */
+    if(err) {
+      return console.log('ERROR',err);
+    }
 
-    var req = client.put(file, {
-      "Content-Length": stat.size,
-      "Content-Type": "text/plain"
+    var type = mime.lookup(file);
+
+    var headers = {
+    'Content-Length': stat.size,
+    'Content-Type': type,
+    "x-amz-acl": "public-read"
+    };
+    var filename = file.split('/')[file.split('/').length-1];
+    // console.log(filename);
+    var fileStream = fs.createReadStream(file);
+    S.client.putStream(fileStream, filename, headers, function (err, res) {
+      /* istanbul ignore if */
+      if(err) {
+        console.log('ERROR',err);
+      }
+      callback(err);
     });
-
-    fs.createReadStream(file).pipe(req);
-
-
-    req.on('response', function(res){
-      // ...
-    });
-  });
-
-  var stream = fs.createReadStream('directory/your_filename.txt');
-  stream.pipe(res);
-
+  }); // end fs.stat
 };
 
 module.exports = S;
