@@ -3,6 +3,6 @@
   "AWS_SECRET_ACCESS_KEY" :"CopythisfromAWS",
   "S3_BUCKET"             : "the_bucket_you_created_in_S3",
   "AWS_REGION"            : "eu-west-1",
-  "S3_DIR"                : "optional-directory-name/",
+  "S3_DIR"                : "optional-directory-name/leave-empty-if-not-required/but-keep-trailing-forward-slash/",
   "ACL"                   : { "x-amz-acl": "public-read" }
 }

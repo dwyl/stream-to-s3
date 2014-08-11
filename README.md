@@ -26,11 +26,36 @@ You do not need async to solve this problem.
 Simply stream the (large) file, do what ever transformation you need and pipe the result directly to amazon S3 using [**Knox**](https://github.com/LearnBoost/knox)
 
 
+## Tests! :open_mouth:
+
+**Three steps** to running the test suite:
+
+1. Install (Dev) Dependencies (Mocha etc.) <br/>
+```sh
+npm install
+```
+
+2. **Copy** the **config_example.json** file **to config.json**
+and put your *real* Amazon S3 credentials in the config.json file:
+```sh
+cp config_example.json config.json  &&  atom config.json
+```
+
+3. Run ***real***tests using using the following command:
+```sh
+npm run realtest
+```
 
 
+***Note***: Because I don't want to make my S3 Keys ***Public***
+(on GitHub), <br />
+I've had to "fake" the `npm test` command for Travis.<br/>
+But don't fear, there are tests and they are easy to run. <br/>
+(and I don't encourage others to do the **exit 0** "hack" unless <br />
+there's some sensitive config you don't want to open-source...)
 
 
-
+. . .
 transform the data in the stream how ever you need to and pipe the output to S3 using Knox putStream(). This is the true power of node.js
 
 ## Useful Links
