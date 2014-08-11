@@ -4,7 +4,7 @@
   "description": "Stream any file to S3 painlessly",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Error: no test specified' && exit 0",
+    "test": "echo 'Please see README.md Tests! >> npm run realtest' && exit 0",
     "realtest": "istanbul cover _mocha -- -R spec",
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
