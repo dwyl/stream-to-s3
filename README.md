@@ -15,6 +15,13 @@ Node.js is the *perfect* tool for streaming large files to Amazon Web Services S
 
 ![Node.js and Amazon S3](http://i.imgur.com/w1S84gJ.png)
 
+## Use Cases
+
+- Rolling your own cloud backup service
+- Uploading files/photos from a mobile app or website
+- Drop Box Clone using S3 as backend
+
+
 ## Usage
 
 Install:
