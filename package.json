@@ -1,6 +1,6 @@
 {
   "name": "stream-to-s3",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Stream any file to S3 painlessly",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "chai": "^1.9.1",
     "coveralls": "^2.11.1",
     "istanbul": "^0.3.0",
-    "mocha": "^1.21.4",
+    "mocha": "^2.0.1",
     "request": "^2.40.0"
   },
   "dependencies": {

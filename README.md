@@ -41,7 +41,7 @@ S.streamFileToS3(file, function(err) { // standard callback function:
 if you need to transform the data in the read-stream before
 uploading it, fork this repo, add a new test/method and submit a PR.
 
-## The Solution (Warning: Contains Detail!)
+## The Solution
 
 See: **index.js** for the implementation details.
 
