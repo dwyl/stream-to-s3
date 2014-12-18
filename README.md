@@ -8,7 +8,8 @@ A quick script to **stream large files to Amazon S3 using node.js**
 [![Coverage Status](https://coveralls.io/repos/nelsonic/stream-to-s3/badge.png?branch=master)](https://coveralls.io/r/nelsonic/stream-to-s3?branch=master)
 [![Dependencies](https://david-dm.org/nelsonic/stream-to-s3.png?theme=shields.io)](https://david-dm.org/nelsonic/stream-to-s3)
 [![devDependency Status](https://david-dm.org/nelsonic/stream-to-s3/dev-status.svg)](https://david-dm.org/nelsonic/stream-to-s3#info=devDependencies)
-[![NPM version](https://badge.fury.io/js/stream-to-s3.png)](https://npmjs.org/package/stream-to-s3)
+
+[![NPM stats](https://nodei.co/npm/stream-to-s3.png?downloads=true)](https://www.npmjs.org/package/stream-to-s3)
 
 Node.js is the *perfect* tool for streaming large files to Amazon Web Services S3.
 
