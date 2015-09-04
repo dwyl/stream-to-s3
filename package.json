@@ -28,6 +28,7 @@
   "devDependencies": {
     "chai": "^2.0.0",
     "coveralls": "^2.11.1",
+    "env2": "^2.0.2",
     "istanbul": "^0.3.0",
     "mocha": "^2.0.1",
     "request": "^2.40.0"
