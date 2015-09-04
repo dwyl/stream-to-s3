@@ -25,9 +25,10 @@ Node.js is the *perfect* tool for streaming large files to Amazon Web Services S
 
 ## Usage
 
-Install:
+Install from NPM:
+
 ```sh
-npm install stream-to-s3
+npm install stream-to-s3 --save
 ```
 
 ```
