@@ -1,24 +1,24 @@
 var file = 'your_file.txt'; // change this part
 
-var fs = require('fs');     // node core filesystem module (KISS!)
+var fs = require('fs');     // node core filesystem module
 var knox = require('knox'); // https://github.com/LearnBoost/knox
 var mime = require('mime'); // https://github.com/broofa/node-mime
 
-var CONFIG = require("./config.json");
+require('env2')('config.env');
 
 var S = {};
 
 // initialise knox S3 client
 S.client = knox.createClient({
-  key:    CONFIG.AWS_ACCESS_KEY_ID,
-  secret: CONFIG.AWS_SECRET_ACCESS_KEY,
-  bucket: CONFIG.S3_BUCKET,
-  region: CONFIG.AWS_REGION
+  key:    process.env.AWSAccessKeyId,
+  secret: process.env.AWSSecretKey,
+  bucket: process.env.S3BUCKET,
+  region: process.env.AWSREGION
 });
 
 S.S3FileUrl = function(file) {
   var filename = file.split('/')[file.split('/').length-1];
-  return 'https://'+CONFIG.S3_BUCKET+'.s3.amazonaws.com/'+filename;
+  return 'https://'+process.env.S3BUCKET+'.s3.amazonaws.com/'+filename;
 };
 
 S.streamFileToS3 = function(file, callback) {

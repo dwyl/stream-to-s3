@@ -5,15 +5,16 @@ var fs = require('fs');
 var chai = require('chai');
 var assert = chai.assert;
 var S = require('../index.js');  // our module
-var CONFIG = require('../config.json');
+require('env2')('config.env');
+console.log(' > > > > > ', process.env.ACL)
 
 describe('Stream-Upload File To S3', function(){
 
   describe('Warm Up The Engine', function(){
 
     it('config.json file should exist', function(){
-      assert.equal(typeof CONFIG, 'object');
-      assert.deepEqual(CONFIG.ACL, {"x-amz-acl": "public-read"});
+      // assert.equal(typeof CONFIG, 'object');
+      assert.deepEqual(process.env.ACL, public-read);
     });
 
     it(example_image+' should exist', function(done){
