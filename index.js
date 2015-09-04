@@ -4,7 +4,7 @@ var fs = require('fs');     // node core filesystem module
 var knox = require('knox'); // https://github.com/LearnBoost/knox
 var mime = require('mime'); // https://github.com/broofa/node-mime
 
-require('env2')('config.env');
+// require('env2')('config.env');
 
 var S = {};
 

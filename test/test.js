@@ -4,8 +4,9 @@ var request = require('request');
 var fs = require('fs');
 var chai = require('chai');
 var assert = chai.assert;
-var S = require('../index.js');  // our module
 require('env2')('config.env');
+var S = require('../index.js');  // our module
+
 console.log(' > > > > > ', process.env.ACL)
 
 describe('Stream-Upload File To S3', function(){
@@ -52,6 +53,4 @@ describe('Stream-Upload File To S3', function(){
     });
 
   });
-
-
 });
