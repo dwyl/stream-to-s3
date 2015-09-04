@@ -39,7 +39,31 @@ S.streamFileToS3(file, function(err) { // standard callback function:
 });
 ```
 
-**Note**: I've deliberately kept the stream-uploader simple,
+### Require Environment Variables
+
+`stream-to-s3` uses environment variables for Amazon WebServices Secret Keys  
+(*to help people avoid hard-coding passwords in your code...*)
+
+> If you're ***new to Environment Variables***
+check out our ***complete beginners guide***:
+[https://github.com/dwyl/**learn-environment-variables**](https://github.com/dwyl/learn-environment-variables)
+
+you will need to *set* the following environment variables:
+
+```sh
+AWSAccessKeyId=ReplaceWithYourActualKey
+AWSSecretKey=DownloadThisFromYourAWSConsole
+S3BUCKET=YourS3BucketName
+AWSREGION=eu-west-1
+ACL=public-read
+```
+
+> While you are developing your app, we recommend managing your environment
+variables using [**env2**](https://github.com/dwyl/env2)
+
+# tl;dr
+
+**Note**: we have deliberately kept the stream-uploader simple,
 if you need to transform the data in the read-stream before
 uploading it, fork this repo, add a new test/method and submit a PR.
 
