@@ -32,16 +32,17 @@ npm install stream-to-s3 --save
 ```
 
 ```
-var S = require('stream-to-s3');
+var S3 = require('stream-to-s3');
 var file = '/your-file-name.jpg';      // any file format!
-S.streamFileToS3(file, function(err) { // standard callback function:
+S3.streamFileToS3(file, function(err) { // standard callback function:
   console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
 });
 ```
 
 ### Require Environment Variables
 
-`stream-to-s3` uses environment variables for Amazon WebServices Secret Keys  
+`stream-to-s3` uses [environment variables](https://github.com/dwyl/**learn-environment-variables)
+for Amazon WebServices Secret Keys  
 (*to help people avoid hard-coding passwords in your code...*)
 
 > If you're ***new to Environment Variables***
@@ -59,7 +60,10 @@ ACL=public-read
 ```
 
 > While you are developing your app, we recommend managing your environment
-variables using [**env2**](https://github.com/dwyl/env2)
+variables using [**env2**](https://github.com/dwyl/env2)  
+this will allow you to use a *file* to keep your AWS/S3 keys which
+you can easily share with your co-developers and still *exculde* from GitHub
+(*by listing it in your `.gitignore` file*)
 
 # tl;dr
 
