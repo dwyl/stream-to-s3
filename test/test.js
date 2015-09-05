@@ -2,8 +2,9 @@ var path  = require('path');
 var example_image = path.resolve('example/_kitten.jpg');
 var request = require('request');
 var fs = require('fs');
-var chai = require('chai');
-var assert = chai.assert;
+// var chai = require('chai');
+// var assert = chai.assert;
+
 require('env2')('config.env');
 var S = require('../index.js');  // our module
 

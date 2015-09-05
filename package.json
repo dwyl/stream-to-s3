@@ -1,6 +1,6 @@
 {
   "name": "stream-to-s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stream any file to S3 painlessly",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,6 @@
   "homepage": "https://github.com/nelsonic/stream-to-s3",
   "devDependencies": {
     "chai": "^2.0.0",
-    "coveralls": "^2.11.1",
     "env2": "^2.0.2",
     "istanbul": "^0.3.0",
     "mocha": "^2.0.1",
