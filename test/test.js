@@ -2,8 +2,6 @@ var path  = require('path');
 var example_image = path.resolve('example/_kitten-compressed.jpg');
 var request = require('request');
 var fs = require('fs');
-// var chai = require('chai');
-// var assert = chai.assert;
 
 
 require('env2')('config.env');
