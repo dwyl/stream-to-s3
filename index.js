@@ -15,6 +15,7 @@ S.client = knox.createClient({
   bucket: process.env.S3BUCKET,
   region: process.env.AWSREGION
 });
+var ACL = process.env.ACL || 'public-read';
 
 S.S3FileUrl = function(file) {
   var filename = file.split('/')[file.split('/').length-1];
@@ -35,7 +36,7 @@ S.streamFileToS3 = function(file, callback) {
     var headers = {
     'Content-Length': stat.size,
     'Content-Type': type,
-    "x-amz-acl": "public-read"
+    "x-amz-acl": ACL
     };
     var filename = file.split('/')[file.split('/').length-1];
     // console.log(filename);
