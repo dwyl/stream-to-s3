@@ -27,8 +27,8 @@
   "homepage": "https://github.com/nelsonic/stream-to-s3",
   "devDependencies": {
     "env2": "^2.0.2",
-    "istanbul": "^0.3.0",
-    "request": "^2.40.0",
+    "istanbul": "^0.3.19",
+    "request": "^2.61.0",
     "tape": "^4.2.0"
   },
   "dependencies": {
