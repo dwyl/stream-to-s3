@@ -3,11 +3,11 @@ Stream to S3
 
 A quick script to **stream large files to Amazon S3 using node.js**
 
-[![Build Status](https://travis-ci.org/nelsonic/stream-to-s3.png?branch=master)](https://travis-ci.org/nelsonic/stream-to-s3)
-[![Code Climate](https://codeclimate.com/github/nelsonic/stream-to-s3.png)](https://codeclimate.com/github/nelsonic/stream-to-s3)
-[![Coverage Status](https://coveralls.io/repos/nelsonic/stream-to-s3/badge.png?branch=master)](https://coveralls.io/r/nelsonic/stream-to-s3?branch=master)
-[![Dependencies](https://david-dm.org/nelsonic/stream-to-s3.png?theme=shields.io)](https://david-dm.org/nelsonic/stream-to-s3)
-[![devDependency Status](https://david-dm.org/nelsonic/stream-to-s3/dev-status.svg)](https://david-dm.org/nelsonic/stream-to-s3#info=devDependencies)
+[![Build Status](https://travis-ci.org/dwyl/stream-to-s3.png?branch=master)](https://travis-ci.org/dwyl/stream-to-s3)
+[![Code Climate](https://codeclimate.com/github/dwyl/stream-to-s3.png)](https://codeclimate.com/github/dwyl/stream-to-s3)
+[![codecov.io](http://codecov.io/github/dwyl/stream-to-s3/coverage.svg?branch=master)](http://codecov.io/github/dwyl/stream-to-s3?branch=master)
+[![Dependencies](https://david-dm.org/dwyl/stream-to-s3.png?theme=shields.io)](https://david-dm.org/dwyl/stream-to-s3)
+[![devDependency Status](https://david-dm.org/dwyl/stream-to-s3/dev-status.svg)](https://david-dm.org/dwyl/stream-to-s3#info=devDependencies)
 
 [![NPM stats](https://nodei.co/npm/stream-to-s3.png?downloads=true)](https://www.npmjs.org/package/stream-to-s3)
 
@@ -31,7 +31,7 @@ Install from NPM:
 npm install stream-to-s3 --save
 ```
 
-```
+```js
 var S3 = require('stream-to-s3');
 var file = '/your-file-name.jpg';      // any file format!
 S3.streamFileToS3(file, function(err) { // standard callback function:
@@ -65,6 +65,31 @@ this will allow you to use a *file* to keep your AWS/S3 keys which
 you can easily share with your co-developers and still *exculde* from GitHub
 (*by listing it in your `.gitignore` file*)
 
+To help you get started we have created a sample `config.env` file
+to use it, simply copy it to your working directory:
+
+```sh
+cp node_modules/stream-to-s3/config.env_example ./config.env && echo 'config.env' >> .gitignore
+```
+
+Then download your S3 keys from your AWS Console and set both keys and S3 bucket in your `config.env` file.
+
+Next load your environment variables using [**env2**](https://github.com/dwyl/env2)
+
+```sh
+npm install env2 --save
+```
+
+```js
+require('env2')('config.env');         // load S3 Keys from config.env
+var S3 = require('stream-to-s3');
+var file = '/your-file-name.jpg';      // any file format!
+S3.streamFileToS3(file, function(err) { // standard callback function:
+  console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
+});
+```
+
+
 # tl;dr
 
 **Note**: we have deliberately kept the stream-uploader simple,
@@ -75,33 +100,6 @@ uploading it, fork this repo, add a new test/method and submit a PR.
 
 See: **index.js** for the implementation details.
 
-## Tests! :open_mouth:
-
-**Three steps** to running the test suite:
-
-1. Install (Dev) Dependencies (Mocha etc.) <br/>
-```sh
-npm install
-```
-
-2. **Copy** the **config_example.json** file **to config.json**
-and put your *real* Amazon S3 credentials in the config.json file:
-```sh
-cp config_example.json config.json  &&  atom config.json
-```
-
-3. Run ***real***tests using using the following command:
-```sh
-npm run realtest
-```
-
-
-***Note***: Because I don't want to make my S3 Keys ***Public***
-(on GitHub), <br />
-I've had to "fake" the `npm test` command for Travis.<br/>
-But don't fear, there are tests and they are easy to run. <br/>
-(and I don't encourage others to do the **exit 0** "hack" unless <br />
-there's some sensitive config you don't want to open-source...)
 
 ## Useful Links
 
