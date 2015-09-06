@@ -9,7 +9,6 @@ A quick script to **stream large files to Amazon S3 using node.js**
 [![Dependencies](https://david-dm.org/dwyl/stream-to-s3.png?theme=shields.io)](https://david-dm.org/dwyl/stream-to-s3)
 [![devDependency Status](https://david-dm.org/dwyl/stream-to-s3/dev-status.svg)](https://david-dm.org/dwyl/stream-to-s3#info=devDependencies)
 
-[![NPM stats](https://nodei.co/npm/stream-to-s3.png?downloads=true)](https://www.npmjs.org/package/stream-to-s3)
 
 Node.js is the *perfect* tool for streaming large files to Amazon Web Services S3.
 
@@ -34,7 +33,7 @@ npm install stream-to-s3 --save
 ```js
 var streamToS3 = require('stream-to-s3');
 var file = '/your-file-name.jpg';      // any file format!
-streamToS3(file, function(err, url) { // standard callback function:
+streamToS3(file, function(err, url) { // url is the url of the file on S3
   console.log(file, ' Was uploaded to S3. Visit:', url);
 });
 ```
