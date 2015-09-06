@@ -32,10 +32,10 @@ npm install stream-to-s3 --save
 ```
 
 ```js
-var S3 = require('stream-to-s3');
+var streamToS3 = require('stream-to-s3');
 var file = '/your-file-name.jpg';      // any file format!
-S3.streamFileToS3(file, function(err) { // standard callback function:
-  console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
+streamToS3(file, function(err, url) { // standard callback function:
+  console.log(file, ' Was uploaded to S3. Visit:', url);
 });
 ```
 
@@ -82,10 +82,10 @@ npm install env2 --save
 
 ```js
 require('env2')('config.env');         // load S3 Keys from config.env
-var S3 = require('stream-to-s3');
+var streamToS3 = require('stream-to-s3');
 var file = '/your-file-name.jpg';      // any file format!
-S3.streamFileToS3(file, function(err) { // standard callback function:
-  console.log(file,' Was uploaded. Visit:',S.S3FileUrl(file));
+streamToS3(file, function(err) { // standard callback function:
+  console.log(file, ' Was uploaded. Visit:', url);
 });
 ```
 
