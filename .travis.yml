@@ -1,6 +1,12 @@
 language: node_js
 node_js:
   - 0.12
+env:
+- S3BUCKET=dwyl
+- AWSREGION=eu-west-1
+- ACL=public-read
+# AWSSecretKey
+
 before_install:
   - pip install --user codecov
 after_success:
