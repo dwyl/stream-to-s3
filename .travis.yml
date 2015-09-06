@@ -2,14 +2,14 @@ language: node_js
 node_js:
   - 0.12
 env:
-- S3BUCKET=dwyl
-- AWSREGION=eu-west-1
-- ACL=public-read
-# AWSAccessKeyId
-- secure: BQJFGbiCovLBiA14R9Op2ZfeNwv8J6/i5vzjHgsus5j/YxFx8Aanw7CbQ30EwZJYcyabZ4OACAg/HAPCte1P4E15nLb2uSsQVLbjiDjrvRQntQlyB2c2Uwstuc1W0zoxMdRFN29jBa1Cb/3timj6XbwYtvg/Hu7bdbYlnI59qH0=
-# AWSSecretKey
-- secure: nRmx0/ATYghFOTU/EgS57mti0U9TEEc6Cj0TELxnqhDkHT3wUY+RxihPCiSzmPAwqzv/PuJ1yeo8KRCIwIs9R+yztR5RCgAUAKxBqU79cJh8MbHDm4n5CWBSckMS0eyooX1trSpN3wDwcXWGuU/NQG8bGXsq/kZtxgCawqKEZlI=
-
+  global:
+  - S3BUCKET=dwyl
+  - AWSREGION=eu-west-1
+  - ACL=public-read
+  # AWSAccessKeyId
+  - secure: BQJFGbiCovLBiA14R9Op2ZfeNwv8J6/i5vzjHgsus5j/YxFx8Aanw7CbQ30EwZJYcyabZ4OACAg/HAPCte1P4E15nLb2uSsQVLbjiDjrvRQntQlyB2c2Uwstuc1W0zoxMdRFN29jBa1Cb/3timj6XbwYtvg/Hu7bdbYlnI59qH0=
+  # AWSSecretKey
+  - secure: nRmx0/ATYghFOTU/EgS57mti0U9TEEc6Cj0TELxnqhDkHT3wUY+RxihPCiSzmPAwqzv/PuJ1yeo8KRCIwIs9R+yztR5RCgAUAKxBqU79cJh8MbHDm4n5CWBSckMS0eyooX1trSpN3wDwcXWGuU/NQG8bGXsq/kZtxgCawqKEZlI=
 before_install:
   - pip install --user codecov
 after_success:
