@@ -4,13 +4,11 @@
   "description": "Stream any file to S3 painlessly",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'Please see README.md Tests! >> npm run realtest' && exit 0",
-    "realtest": "istanbul cover _mocha -- -R spec --timeout 15000 ",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec --timeout 15000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/tape/bin/tape ./test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nelsonic/stream-to-s3.git"
+    "url": "https://github.com/dwyl/stream-to-s3.git"
   },
   "keywords": [
     "upload",
@@ -19,12 +17,12 @@
     "s3",
     "stream"
   ],
-  "author": "nelsonic <nodecoder@gmail.com> (https://github.com/nelsonic)",
+  "author": "nelsonic <contact.nelsonic@gmail.com> (https://github.com/nelsonic)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nelsonic/stream-to-s3/issues"
+    "url": "https://github.com/dwyl/stream-to-s3/issues"
   },
-  "homepage": "https://github.com/nelsonic/stream-to-s3",
+  "homepage": "https://github.com/dwyl/stream-to-s3",
   "devDependencies": {
     "env2": "^2.0.2",
     "istanbul": "^0.3.19",
